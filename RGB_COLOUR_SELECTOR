@@ -1,0 +1,19 @@
+/*
+RGB Colour Selector
+Uses PWM pins to change the intensity of each colour of the RGB.
+Uses Analog Signal.
+Main Theme : Analog Output
+*/
+int red = 11;//Red connector of RGB is associated to pin 11
+int green = 10;//Green connector of RGB is associated to pin 10
+int blue = 9;//Blue connector of RGB is associated to pin 9
+
+
+}
+
+void loop() {
+  //sets each colour to a value to create a final colour: 
+analogWrite(red,90);
+analogWrite(green,212);
+analogWrite(blue,22);
+}

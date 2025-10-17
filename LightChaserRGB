@@ -1,0 +1,62 @@
+/*
+RGB Light Chaser
+Uses one RGB instead of 4 LEDs to create the same running effect.
+Starts with the colour white the red green and blue.
+Goes in the sequence White Red Green Blue Blue Green Red White.
+Main Theme : Digital Output
+*/
+
+// the setup function runs once when you press reset or power the board
+  int timeDelay = 10;// makes the value timeDelay always equal to 10ms
+
+void setup() {
+ //sets the pin 11,12 and 13 as outputs.
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+
+}
+
+// the loop function runs over and over again forever
+void loop() {
+    
+  digitalWrite(11, 1);//gives power to all three colours components creating white
+  digitalWrite(12, 1);  
+  digitalWrite(13,1);
+  delay(timeDelay);                      
+ 
+  digitalWrite(11, 1);//only gives power to the red component
+  digitalWrite(12, 0);   
+  digitalWrite(13,0);
+  delay(timeDelay);                      
+ 
+  digitalWrite(11, 0);
+  digitalWrite(12, 1);//only gives power to the green component   
+  digitalWrite(13,0);
+  delay(timeDelay);  
+
+  digitalWrite(11, 0);
+  digitalWrite(12, 0);   
+  digitalWrite(13,1);//only gives power to the blue component
+  delay(timeDelay);  
+  
+  digitalWrite(11, 0);
+  digitalWrite(12, 0);   
+  digitalWrite(13,1);//only gives power to the blue component
+  delay(timeDelay);  
+
+  digitalWrite(11, 0);
+  digitalWrite(12, 1);//only gives power to the green component   
+  digitalWrite(13,0);
+  delay(timeDelay); 
+
+  digitalWrite(11, 1);//only gives power to the red component
+  digitalWrite(12, 0);   
+  digitalWrite(13,0);
+  delay(timeDelay);   
+ 
+  digitalWrite(11, 1);//gives power to all three colour components creating white
+  digitalWrite(12, 1);  
+  digitalWrite(13,1);
+  delay(timeDelay); 
+}

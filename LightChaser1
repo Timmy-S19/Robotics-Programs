@@ -1,0 +1,71 @@
+/*
+LightChaser 1 
+Makes 4 LEDS mimmic a running aspect where one LED is on after the other from
+top to the bottom and going back.
+Maint Theme : Digital Output
+*/
+
+// the setup function runs once when you press reset or power the board
+  int timeDelay = 10;// makes the value timeDelay always equal to 10ms
+
+void setup() {
+  pinMode(10, OUTPUT);//sets the pin 10,11,12 and 13 as outputs.
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(10, 1);//makes the first LED turn on and all of the others are off
+  digitalWrite(11, 0);
+  digitalWrite(12, 0);  
+  digitalWrite(13,0);
+  delay(timeDelay); // wait for 10ms
+ 
+  digitalWrite(10, 0);
+  digitalWrite(11, 1);//makes the second LED turn on and all of the others are off
+  digitalWrite(12, 0);   
+  digitalWrite(13,0);
+  delay(timeDelay); // wait for 10ms
+  
+  digitalWrite(10, 0);
+  digitalWrite(11, 0);
+  digitalWrite(12, 1);//makes the third LED turn on and all of the others are off   
+  digitalWrite(13,0);
+  delay(timeDelay); // wait for 10ms 
+ 
+  digitalWrite(10, 0);
+  digitalWrite(11, 0);
+  digitalWrite(12, 0);   
+  digitalWrite(13,1);//makes the fourth LED turn on and all of the others are off
+  delay(timeDelay);  // wait for 10ms
+ 
+ /* the same sequence is then applied but in reverse so it starts with the fourth LED
+  and ends with the first LED*/
+ 
+  digitalWrite(10, 0);
+  digitalWrite(11, 0);
+  digitalWrite(12, 0);   
+  digitalWrite(13,1);
+  delay(timeDelay); // wait for 10ms 
+  
+  digitalWrite(10, 0);
+  digitalWrite(11, 0);
+  digitalWrite(12, 1);   
+  digitalWrite(13,0);
+  delay(timeDelay); // wait for 10ms
+
+  digitalWrite(10, 0);
+  digitalWrite(11, 1);
+  digitalWrite(12, 0);   
+  digitalWrite(13,0);
+  delay(timeDelay); // wait for 10ms  
+
+  digitalWrite(10, 1);
+  digitalWrite(11, 0);
+  digitalWrite(12, 0);  
+  digitalWrite(13,0);
+  delay(timeDelay); // wait for 10ms
+}

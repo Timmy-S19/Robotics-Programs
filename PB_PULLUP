@@ -1,0 +1,22 @@
+/*
+Arduino Push Button (PB) Pull-Up
+When PB is not pressed it's value is 1.
+When PB is pressed it's value is 0.
+Main Theme : Digital Input
+*/
+
+int pushButton = 7; // PB is associated with pin 7 
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);//Creates connection to serial monitor
+pinMode(pushButton,INPUT);//PB is set as a Input
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+int buttonState = digitalRead(pushButton);//reads the value of PB as buttonstate
+Serial.print("buttonState = ");//prints what's in quotations
+Serial.println(buttonState);//prints the value and goes to the next line
+delay(1);//gives a delay of 1ms in between each read
+}

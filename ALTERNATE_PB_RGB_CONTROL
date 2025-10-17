@@ -1,0 +1,40 @@
+/*
+Alternate Push Button RGB control
+When the PB isn't pressed the RGB displays Red and Green.
+When the PB is pressed the RGB displays Red and Blue.
+Main Theme : Digital Input controlling Digital Output
+*/
+
+
+int pushButton = 2;//pushButton is now associated to pin 2
+int red = 13;//Red connector of RGB is associated to pin 13
+int green = 12;//Green connector of RGB is associated to pin 12
+int blue = 11;//Blue connector of RGB is associated to pin 11
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+ 
+  pinMode(pushButton, INPUT_PULLUP);//Make the pushbutton's pin an input pullup
+  
+  pinMode(13, OUTPUT);//Sets pin 13,12 and 11 as Outputs 
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input pin:
+  int buttonState = digitalRead(pushButton);//reads the value of PB as buttonState
+ // print out the state of the button and it's pin:
+  Serial.print("buttonState = ");
+  Serial.print(buttonState);
+  Serial.print("\t");//makes a space in between both values 
+  Serial.print("pushButton = ");
+  Serial.println(pushButton);//ends the line so that both value are on the same line
+  
+  digitalWrite(red,1);//Power is always given to Red connector
+  digitalWrite(green,buttonState);//Power is only given to Green connector when buttonState = 1
+  digitalWrite(blue,!buttonState);//Power is only given to Blue connector when buttonState = 0
+  delay(1);  // delay in between reads for stability
+}
