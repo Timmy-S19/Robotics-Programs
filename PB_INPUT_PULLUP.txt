@@ -1,5 +1,5 @@
 /*
-Arduino Push Button (PB) Pull-Up
+Arduino Push Button (PB) Input Pull-Up
 When PB is not pressed it's value is 1.
 When PB is pressed it's value is 0.
 Uses a internal resistance instead of an external one
