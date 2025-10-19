@@ -1,7 +1,7 @@
 /*
-Arduino Push Button (PB) Pull-Up
-When PB is not pressed it's value is 1.
-When PB is pressed it's value is 0.
+Arduino Push Button (PB) Pull-Down
+When PB is not pressed it's value is 0.
+When PB is pressed it's value is 1.
 Main Theme : Digital Input
 */
 
